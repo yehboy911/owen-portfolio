@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lenovo Server SW Open Source Compliance Framework – Owen Yeh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:         #2563eb;
+      --accent-light:   #eff6ff;
+      --text-primary:   #111827;
+      --text-secondary: #6b7280;
+      --border:         #e5e7eb;
+      --bg:             #ffffff;
+      --bg-soft:        #f9fafb;
+      --radius:         12px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page { max-width: 800px; margin: 0 auto; padding: 48px 24px 100px; }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--text-secondary);
+      margin-bottom: 36px; transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--accent); text-decoration: none; }
+
+    /* Header */
+    .project-header { margin-bottom: 32px; }
+    .project-header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.3; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag {
+      padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 500;
+    }
+    .tag-blue   { background: #dbeafe; color: #1d4ed8; }
+    .tag-green  { background: #dcfce7; color: #15803d; }
+    .tag-purple { background: #f3e8ff; color: #7e22ce; }
+    .tag-orange { background: #ffedd5; color: #c2410c; }
+    .tag-teal   { background: #ccfbf1; color: #0f766e; }
+
+    .product-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.83rem; color: var(--accent);
+      background: var(--accent-light); border: 1px solid #bfdbfe;
+      border-radius: 8px; padding: 6px 14px;
+    }
+
+    /* Hero image */
+    .hero-image {
+      width: 100%; border-radius: var(--radius);
+      border: 1px solid var(--border); margin-bottom: 40px;
+      object-fit: cover; max-height: 380px;
+    }
+
+    /* Sections */
+    .section { margin-bottom: 36px; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-secondary);
+      margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+    .section p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; }
+
+    /* Pain points / bullet list */
+    .pain-list { list-style: none; padding: 0; }
+    .pain-list li {
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+      padding: 10px 14px; background: var(--bg-soft);
+      border-left: 3px solid #f87171; border-radius: 0 8px 8px 0;
+      margin-bottom: 8px;
+    }
+
+    /* Solutions list */
+    .solution-list { list-style: none; padding: 0; }
+    .solution-list li {
+      font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+      padding: 10px 14px; background: var(--bg-soft);
+      border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+      margin-bottom: 8px;
+    }
+
+    /* Outcome cards */
+    .outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .outcome-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 18px;
+    }
+    .outcome-card h4 { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+    .outcome-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* Footer */
+    footer { text-align: center; font-size: 0.78rem; color: #9ca3af; padding-top: 40px; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    @media (max-width: 600px) { .outcome-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <a href="./index.html" class="back-link">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Portfolio
+  </a>
+
+  <!-- Header -->
+  <div class="project-header">
+    <h1>Lenovo Server SW Open Source Compliance Framework</h1>
+    <div class="tags">
+      <span class="tag tag-blue">Open Source Compliance</span>
+      <span class="tag tag-green">Risk Mitigation</span>
+      <span class="tag tag-purple">Shift-Left Process</span>
+      <span class="tag tag-orange">Cross-Functional Bridge</span>
+      <span class="tag tag-teal">Compliance Automation</span>
+    </div>
+    <a href="https://support.lenovo.com/tw/en/solutions/ht116433-lenovo-xclarity-essentials-onecli-onecli" target="_blank" class="product-link">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      View Product Page
+    </a>
+  </div>
+
+  <!-- Hero Image -->
+  <img src="./OneCLI_Win_Notice.jpg" alt="OneCLI Windows Open Source Notice" class="hero-image" />
+
+  <!-- Background -->
+  <div class="section">
+    <p class="section-label">Background</p>
+    <p>Led Open Source Compliance (OSC) program for Lenovo Group across all product lines, including high-profile tablet platforms such as Tab P11 Plus.</p>
+  </div>
+
+  <!-- Pain Points -->
+  <div class="section">
+    <p class="section-label">Pain Points</p>
+    <ul class="pain-list">
+      <li>Lenovo's tablet products had experienced GPL violation incidents</li>
+      <li>Severe communication gap between Engineering and Legal teams — Legal seen as "Department of No"</li>
+      <li>Late-stage compliance reviews resulting in costly code rewrites and delayed releases</li>
+      <li>High legal and reputational risk from uncontrolled use of open-source components</li>
+    </ul>
+  </div>
+
+  <!-- Goal -->
+  <div class="section">
+    <p class="section-label">Goal</p>
+    <p>Build a standardized, shift-left OSC framework that protects the company from legal risk while maintaining development velocity.</p>
+  </div>
+
+  <!-- Solutions -->
+  <div class="section">
+    <p class="section-label">Solutions</p>
+    <p style="margin-bottom: 12px; font-size: 0.92rem; color: var(--text-secondary);">As Open Source Compliance Lead, I designed and rolled out a company-wide OSC process that acts as the bridge between R&amp;D and Legal teams.</p>
+    <ul class="solution-list">
+      <li>Created common language and 3-step review cycle (identify license → analyze usage → decide action) to eliminate misunderstanding</li>
+      <li>Introduced Red/Yellow/Green license classification system for instant decision-making (Permissive = Green/Auto-approve, Copyleft = Red/Forbidden)</li>
+      <li>Shifted compliance review from late-stage to Build phase with standardized submission requirements</li>
+      <li>Established dedicated cross-team communication channels and OSS Use Policy integrated into daily developer workflow</li>
+    </ul>
+  </div>
+
+  <!-- Outcome -->
+  <div class="section">
+    <p class="section-label">Outcome &amp; Impact</p>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <h4>Quality &amp; Stability</h4>
+        <p>Achieved consistent compliance across all product lines and eliminated previous GPL violation risks.</p>
+      </div>
+      <div class="outcome-card">
+        <h4>Risk Mitigation</h4>
+        <p>Prevented potential legal actions and major reputational damage by ensuring 100% audit-ready status for all open-source usage.</p>
+      </div>
+      <div class="outcome-card">
+        <h4>Engineering Efficiency</h4>
+        <p>Removed "speed bump" perception of Legal team; developers now know exactly what to submit and receive fast feedback.</p>
+      </div>
+      <div class="outcome-card">
+        <h4>Cross-Functional Leadership</h4>
+        <p>Successfully aligned Engineering, Legal, and Product teams under one clear framework, enabling secure and faster innovation across Lenovo Group.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>Owen Yeh &middot; New Taipei City, Taiwan &middot; owen_yeh@hotmail.com</footer>
+
+</div>
+</body>
+</html>
