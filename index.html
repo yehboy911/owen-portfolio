@@ -21,19 +21,29 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .page { max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    /* Hero */
     .hero { display: flex; align-items: center; gap: 36px; margin-bottom: 56px; }
     .avatar-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; border: 3px solid var(--accent); }
     .hero-info h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
     .hero-info .subtitle { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: var(--text-secondary); }
     .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* Section */
     .section { margin-bottom: 36px; }
     .section-title, .col-section-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+    /* About */
     .summary-text { font-size: 0.97rem; color: var(--text-secondary); line-height: 1.85; }
+
+    /* Education */
     .edu-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 18px; display: flex; align-items: center; gap: 14px; }
     .edu-icon { font-size: 1.3rem; flex-shrink: 0; }
     .edu-card h3 { font-size: 0.9rem; font-weight: 600; }
     .edu-card p { font-size: 0.8rem; color: var(--text-secondary); margin-top: 1px; }
+
+    /* Skills + Language */
     .skills-lang-row { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; align-items: start; }
     .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .skill-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
@@ -46,25 +56,51 @@
     .lang-card .card-icon { font-size: 1.2rem; margin-bottom: 6px; }
     .lang-card h4 { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
     .lang-card .lang-level { font-size: 0.8rem; color: var(--text-secondary); }
+
+    /* Projects Overview */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .project-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; text-decoration: none; color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s; display: block;
+      background: var(--bg);
+    }
+    .project-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-2px); text-decoration: none; }
+    .project-card-img { width: 100%; height: 160px; object-fit: cover; object-position: top; display: block; background: var(--bg-soft); }
+    .project-card-img-placeholder { width: 100%; height: 160px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+    .project-card-body { padding: 14px 16px; }
+    .project-card-title { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; line-height: 1.4; }
+    .project-card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .ptag { padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 500; }
+    .ptag-blue   { background: #dbeafe; color: #1d4ed8; }
+    .ptag-green  { background: #dcfce7; color: #15803d; }
+    .ptag-purple { background: #f3e8ff; color: #7e22ce; }
+    .ptag-orange { background: #ffedd5; color: #c2410c; }
+    .ptag-teal   { background: #ccfbf1; color: #0f766e; }
+
+    /* Footer */
     footer { text-align: center; font-size: 0.78rem; color: #9ca3af; padding-top: 40px; border-top: 1px solid var(--border); margin-top: 20px; }
+
     @media (max-width: 640px) {
       .hero { flex-direction: column; align-items: flex-start; gap: 20px; }
       .skills-lang-row { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 641px) and (max-width: 860px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 <div class="page">
 
+  <!-- Hero -->
   <div class="hero">
     <img src="./avatar.jpg" class="avatar-img" alt="Owen Yeh" />
     <div class="hero-info">
       <h1>Owen Yeh</h1>
-      <p class="subtitle">
-        Product Assurance &amp; Open Source Compliance<br />
-        FW Validation · Cloud Server NPI
-      </p>
+      <p class="subtitle">Product Assurance &amp; Open Source Compliance<br />FW Validation · Cloud Server NPI</p>
       <div class="hero-meta">
         <span>
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -82,17 +118,13 @@
     </div>
   </div>
 
+  <!-- About Me -->
   <div class="section">
     <p class="section-title">About Me</p>
-    <p class="summary-text">
-      Results-oriented Senior Quality Engineer with 15+ years in OEM/ODM system integration testing
-      and product assurance for cloud server platforms. Skilled in partnering with factory TE and QA
-      to conduct root cause analysis and firmware validation across NPI and sustaining releases.
-      Experienced in driving open source compliance initiatives and building structured test processes
-      that improve cross-team alignment and product quality.
-    </p>
+    <p class="summary-text">Results-oriented Senior Quality Engineer with 15+ years in OEM/ODM system integration testing and product assurance for cloud server platforms. Skilled in partnering with factory TE and QA to conduct root cause analysis and firmware validation across NPI and sustaining releases. Experienced in driving open source compliance initiatives and building structured test processes that improve cross-team alignment and product quality.</p>
   </div>
 
+  <!-- Education -->
   <div class="section">
     <p class="section-title">Education</p>
     <div class="edu-card">
@@ -104,6 +136,7 @@
     </div>
   </div>
 
+  <!-- Skills + Language -->
   <div class="section">
     <div class="skills-lang-row">
       <div>
@@ -164,6 +197,79 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Projects Overview -->
+  <div class="section">
+    <p class="section-title">Projects Overview</p>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <a href="./project-1.html" class="project-card">
+        <img src="./OneCLI_Win_Notice.jpg" alt="OSC Framework" class="project-card-img" />
+        <div class="project-card-body">
+          <p class="project-card-title">Lenovo Server SW Open Source Compliance Framework</p>
+          <div class="project-card-tags">
+            <span class="ptag ptag-blue">Open Source Compliance</span>
+            <span class="ptag ptag-green">Risk Mitigation</span>
+            <span class="ptag ptag-purple">Shift-Left Process</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="./project-2.html" class="project-card">
+        <img src="./ST650 V3 Madrid 32x25 front angled left.jpg" alt="MLK Test Strategy" class="project-card-img" />
+        <div class="project-card-body">
+          <p class="project-card-title">Leading / Trailing / MLK Test Strategy Optimization for Genoa / EGS Servers</p>
+          <div class="project-card-tags">
+            <span class="ptag ptag-blue">Test Strategy</span>
+            <span class="ptag ptag-green">Data-Driven Testing</span>
+            <span class="ptag ptag-purple">Risk-Based</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="./project-3.html" class="project-card">
+        <img src="./project-3-cover.jpg" alt="AWS Graviton NPI Validation" class="project-card-img" />
+        <div class="project-card-body">
+          <p class="project-card-title">AWS Graviton ARM SoC NPI Validation</p>
+          <div class="project-card-tags">
+            <span class="ptag ptag-blue">Firmware Validation</span>
+            <span class="ptag ptag-green">SoC Integration</span>
+            <span class="ptag ptag-purple">NPI Testing</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="./project-4.html" class="project-card">
+        <img src="./project-4-cover.jpg" alt="Amazon EC2 Mac Instances Integrated Server Validation" class="project-card-img" />
+        <div class="project-card-body">
+          <p class="project-card-title">Amazon EC2 Mac Instances Integrated Server Validation</p>
+          <div class="project-card-tags">
+            <span class="ptag ptag-blue">Firmware Validation</span>
+            <span class="ptag ptag-green">Test Plan Design</span>
+            <span class="ptag ptag-orange">Test Automation</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 5 -->
+      <a href="./project-5.html" class="project-card">
+        <img src="./project-5-cover.jpeg" alt="MacBook Unibody A1342 Root Cause Analysis" class="project-card-img" />
+        <div class="project-card-body">
+          <p class="project-card-title">Root Cause Analysis — MacBook Unibody A1342 Mass Production</p>
+          <div class="project-card-tags">
+            <span class="ptag ptag-blue">Root Cause Analysis</span>
+            <span class="ptag ptag-green">Factory QA Collaboration</span>
+            <span class="ptag ptag-purple">Risk Mitigation</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 
